@@ -1,0 +1,282 @@
+[
+  {
+    "slug": "bain-ai-music-platform",
+    "title": "Bain & Company — AI Music Platform Strategy & Prototype",
+    "company": "Bain & Company",
+    "period": "Sep 2025",
+    "summary": "Developed an AI-powered music platform prototype designed to support musicians across the entire creative journey. Built a structured business plan including user segmentation, value proposition, and monetization strategy.",
+    "role": "Strategy & Product Development Contributor",
+    "tags": [
+      "AI",
+      "Platform Strategy",
+      "Music Industry",
+      "Product Development",
+      "Growth Strategy"
+    ],
+    "tools": [
+      "Market research",
+      "User journey design",
+      "Business modeling",
+      "Competitive analysis"
+    ],
+    "deliverables": [
+      "AI music platform prototype",
+      "End-to-end user journey design",
+      "Business plan and monetization strategy"
+    ],
+    "highlights": [
+      "Designed an AI-powered platform supporting artists from creation to promotion",
+      "Mapped the full musician journey (creation → distribution → audience growth)",
+      "Built a structured business plan including monetization and scalability logic",
+      "Defined value proposition and differentiation within the music-tech landscape"
+    ],
+    "kpis": [
+      "Defined scalable platform model across multiple user segments",
+      "Structured end-to-end user journey for artist lifecycle",
+      "Identified key monetization streams for early-stage growth"
+    ],
+    "links": [],
+    "files": [
+      {
+        "original": "AMP_-_Albert_Music_Project.pdf",
+        "stored": "20260317-165636-AMP_-_Albert_Music_Project.pdf",
+        "uploaded_at": "2026-03-17 16:56"
+      }
+    ]
+  },
+  {
+    "slug": "venchi-website",
+    "title": "Venchi — Website Build (WordPress)",
+    "company": "Venchi",
+    "logo": "logos/venchi.png",
+    "period": "Oct 2025",
+    "summary": "Designed and built a WordPress website for Venchi: structure, layout, and content setup. Delivered a clean, responsive site with a launch-ready configuration.",
+    "role": "Web / Product Builder",
+    "tags": [
+      "Website",
+      "WordPress",
+      "Brand",
+      "UX/UI"
+    ],
+    "tools": [
+      "WordPress",
+      "Elementor",
+      "HTML/CSS"
+    ],
+    "deliverables": [
+      "Live website",
+      "Responsive pages",
+      "Content structure"
+    ],
+    "highlights": [
+      "Defined site structure and navigation",
+      "Created responsive layout and styling",
+      "Prepared launch-ready setup and content"
+    ],
+    "kpis": [
+      "100% responsive layout across desktop, tablet and mobile",
+      "Improved navigation clarity through structured product hierarchy",
+      "Optimized page load structure for visual consistency and performance",
+      "Defined clear call-to-action flow across key landing pages"
+    ],
+    "links": [],
+    "files": [
+      {
+        "original": "venchi-website.pdf",
+        "stored": "20260312-200342-venchi-website.pdf",
+        "uploaded_at": "2026-03-12 20:03"
+      },
+      {
+        "original": "Screenshot_2026-03-12_at_19.47.25.png",
+        "stored": "20260312-195927-Screenshot_2026-03-12_at_19.47.25.png",
+        "uploaded_at": "2026-03-12 19:59"
+      }
+    ]
+  },
+  {
+    "slug": "unicredit-sme-alternative-data-screener",
+    "title": "UniCredit — SME Alternative Data Intelligence Engine (Streamlit App)",
+    "company": "UniCredit",
+    "logo": "logos/unicredit.png",
+    "period": "Jan 2026",
+    "summary": "Designed and built an SME screening web app using Streamlit, turning alternative data into actionable insights for faster company assessment and decision-making.",
+    "role": "End-to-end builder (BD + product prototype)",
+    "tags": [
+      "Banking",
+      "SME Screening",
+      "Alternative Data"
+    ],
+    "tools": [
+      "Python",
+      "Streamlit",
+      "Pandas"
+    ],
+    "deliverables": [
+      "Live web app",
+      "Slide deck",
+      "Deployed prototype"
+    ],
+    "highlights": [
+      "Built a repeatable SME screening flow (inputs → scoring → outputs)",
+      "Deployed and shared as a live Streamlit app for stakeholder review",
+      "Packaged results and narrative in a stakeholder-ready deck"
+    ],
+    "kpis": [],
+    "links": [
+      {
+        "label": "Streamlit Web App",
+        "url": "https://unicredit-screenersydneysala-fzejn3ewmmwidkq27sh9eq.streamlit.app"
+      }
+    ],
+    "files": [
+      {
+        "original": "UNICREDIT_SME_ALTERNATIVE_DATA_INTELLIGENCE_ENGINE_-_EXPLORATION.pdf",
+        "stored": "20260312-194406-UNICREDIT_SME_ALTERNATIVE_DATA_INTELLIGENCE_ENGINE_-_EXPLORATION.pdf",
+        "uploaded_at": "2026-03-12 19:44"
+      },
+      {
+        "original": "UNICREDIT_SME_ALTERNATIVE_DATA_INTELLIGENCE_ENGINE.pdf",
+        "stored": "20260312-194400-UNICREDIT_SME_ALTERNATIVE_DATA_INTELLIGENCE_ENGINE.pdf",
+        "uploaded_at": "2026-03-12 19:44"
+      }
+    ]
+  },
+  {
+    "slug": "sensereply-anomaly-detection-intelligence",
+    "title": "SenseReply — Substation Data Cleaning & Anomaly Intelligence",
+    "company": "SenseReply",
+    "logo": "logos/sensereply.png",
+    "period": "Dec 2025",
+    "summary": "Worked on industrial energy data pipelines focused on cleaning, structuring and transforming substation data to enable reliable anomaly detection.",
+    "role": "Data & Business Innovation Contributor",
+    "tags": [
+      "Energy",
+      "Industrial Data",
+      "Anomaly Detection",
+      "Data Cleaning",
+      "AI Systems"
+    ],
+    "tools": [
+      "Python",
+      "Data Processing Pipelines",
+      "Time-Series Analysis"
+    ],
+    "deliverables": [
+      "Data cleaning framework",
+      "Technical documentation"
+    ],
+    "highlights": [
+      "Transformed noisy substation data into structured, anomaly-ready datasets",
+      "Improved reliability of anomaly detection through preprocessing logic"
+    ],
+    "kpis": [],
+    "links": [],
+    "files": [
+      {
+        "original": "From-Data-Cleaning-to-Anomaly-Intelligence-2.pdf",
+        "stored": "20260312-194459-From-Data-Cleaning-to-Anomaly-Intelligence-2.pdf",
+        "uploaded_at": "2026-03-12 19:44"
+      },
+      {
+        "original": "Cleaning-Substation-Data-for-Reliable-Anomaly-Detection.pdf",
+        "stored": "20260312-194446-Cleaning-Substation-Data-for-Reliable-Anomaly-Detection.pdf",
+        "uploaded_at": "2026-03-12 19:44"
+      }
+    ]
+  },
+  {
+    "slug": "moncler-global-expansion-glass-model",
+    "title": "Moncler — Global Expansion Strategy & GLAS Market Selection Model (2025–2027)",
+    "company": "Moncler",
+    "logo": "logos/moncler.png",
+    "period": "Nov 2025",
+    "summary": "Designed a data-driven global expansion strategy building a GLAS model to rank high-potential cities for 2025–2027 growth, combining market data and brand-fit variables.",
+    "role": "Strategy & Market Intelligence Lead",
+    "tags": [
+      "Luxury Strategy",
+      "Global Expansion",
+      "Market Intelligence",
+      "Data Modeling",
+      "Retail Strategy"
+    ],
+    "tools": [
+      "Global market data analysis",
+      "Multi-factor scoring model (GLAS)",
+      "Financial projections"
+    ],
+    "deliverables": [
+      "GLAS model",
+      "City ranking",
+      "Financial impact dashboard"
+    ],
+    "highlights": [
+      "Built a scoring model combining hard data and brand DNA variables",
+      "Identified top expansion cities and phased rollout logic",
+      "Structured financial projections including ROI and revenue targets"
+    ],
+    "kpis": [
+      "1.8x projected aggregate ROI",
+      "$22M projected annual sales impact",
+      "120M annual PR reach"
+    ],
+    "links": [],
+    "files": [
+      {
+        "original": "The-World-Is-Our-Mountain_1.pdf",
+        "stored": "20260312-194534-The-World-Is-Our-Mountain_1.pdf",
+        "uploaded_at": "2026-03-12 19:45"
+      }
+    ]
+  },
+  {
+    "slug": "propriogo-spain-city-expansion",
+    "title": "ProprioGO — Spain Expansion: Top 10 Cities & Performance Budget Model",
+    "company": "Google",
+    "logo": "logos/google.png",
+    "period": "Nov 2025",
+    "summary": "Built a data-driven market entry strategy for a real estate platform expanding from Italy into Spain. Created a top-10 city prioritization model and a €500,000 paid media allocation plan with lead-generation forecasts.",
+    "role": "Market Expansion & Growth Strategy Lead",
+    "tags": [
+      "Market Entry Strategy",
+      "City Prioritization",
+      "Growth Strategy",
+      "Performance Marketing",
+      "Budget Allocation"
+    ],
+    "tools": [
+      "Conversion metrics (CVR, CPA, CTR)",
+      "City scoring framework",
+      "Media budget forecasting",
+      "Demand & demographic analysis"
+    ],
+    "deliverables": [
+      "Top 10 Spanish cities ranking",
+      "€500,000 media allocation plan (6 months)",
+      "Lead and performance forecast model",
+      "Segment analysis: For Sale vs New Construction"
+    ],
+    "highlights": [
+      "Ranked top 10 Spanish cities for launch using demand and cost-efficiency signals",
+      "Modeled a €500,000 budget split to optimize lead volume and CPA",
+      "Benchmarked segment performance using CVR/CPA to guide spend allocation"
+    ],
+    "kpis": [
+      "€500,000 structured media plan",
+      "Segment benchmark: 9.02% CVR and €5.54 CPA (For Sale)",
+      "Top 10 city shortlist for Spain entry"
+    ],
+    "links": [],
+    "files": [
+      {
+        "original": "ProprioGO-Spain-Launch.pdf",
+        "stored": "20260312-194625-ProprioGO-Spain-Launch.pdf",
+        "uploaded_at": "2026-03-12 19:46"
+      },
+      {
+        "original": "ProprioGO_1.pdf",
+        "stored": "20260312-194619-ProprioGO_1.pdf",
+        "uploaded_at": "2026-03-12 19:46"
+      }
+    ]
+  }
+]

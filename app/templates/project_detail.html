@@ -1,0 +1,147 @@
+{% extends "base.html" %}
+{% block content %}
+
+<a class="btn" href="{{ url_for('work') }}">← Back</a>
+
+<div class="sectionTitle">
+  {% if project.logo %}
+  <img src="{{ url_for('static', filename=project.logo) }}"
+       alt="{{ project.company }} logo"
+       style="width:40px; height:40px; object-fit:contain; margin-bottom:10px;">
+  {% endif %}
+  <h2>{{ project.title }}</h2>
+</div>
+<div class="rule"></div>
+
+<div class="grid">
+
+  <!-- LEFT: Content -->
+  <div class="card" style="grid-column: span 7;">
+    <div class="meta">{{ project.company }} • {{ project.period }}</div>
+
+    {% if project.role %}
+      <div class="small" style="margin-top:10px;">
+        <strong>Role:</strong> {{ project.role }}
+      </div>
+    {% endif %}
+
+    {% if project.tags %}
+      <div style="margin-top:12px; display:flex; gap:8px; flex-wrap:wrap;">
+        {% for t in project.tags %}
+          <span style="font-size:12px; padding:6px 10px; border-radius:999px; border:1px solid rgba(20,20,20,.12); background:rgba(255,255,255,.7);">
+            {{ t }}
+          </span>
+        {% endfor %}
+      </div>
+    {% endif %}
+
+    <div style="margin-top:14px;">
+      <p>{{ project.summary }}</p>
+    </div>
+
+    {% if project.tools or project.deliverables %}
+      <div style="margin-top:14px; display:grid; grid-template-columns: 1fr 1fr; gap:14px;">
+        {% if project.tools %}
+          <div>
+            <div class="small" style="text-transform:uppercase; letter-spacing:.12em;"><strong>Tools</strong></div>
+            <ul class="small" style="margin-top:8px;">
+              {% for tool in project.tools %}
+                <li>{{ tool }}</li>
+              {% endfor %}
+            </ul>
+          </div>
+        {% endif %}
+
+        {% if project.deliverables %}
+          <div>
+            <div class="small" style="text-transform:uppercase; letter-spacing:.12em;"><strong>Deliverables</strong></div>
+            <ul class="small" style="margin-top:8px;">
+              {% for d in project.deliverables %}
+                <li>{{ d }}</li>
+              {% endfor %}
+            </ul>
+          </div>
+        {% endif %}
+      </div>
+    {% endif %}
+
+    {% if project.highlights %}
+      <h3 style="margin-top:18px;">Highlights</h3>
+      <ul>
+        {% for h in project.highlights %}
+          <li>{{ h }}</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+
+    {% if project.kpis %}
+      <h3 style="margin-top:18px;">KPIs / Outcomes</h3>
+      <ul>
+        {% for k in project.kpis %}
+          <li>{{ k }}</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+
+    {% if project.links %}
+      <h3 style="margin-top:18px;">Links</h3>
+      <ul>
+        {% for l in project.links %}
+          <li><a href="{{ l.url }}" target="_blank">{{ l.label }}</a></li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+  </div>
+
+  <!-- RIGHT: Files + PDF viewer -->
+  <div class="card" style="grid-column: span 5;">
+    <h3>Files</h3>
+
+    {# Collect PDFs #}
+    {% set pdfs = [] %}
+    {% if project.files %}
+      {% for f in project.files %}
+        {% if f.original.lower().endswith('.pdf') %}
+          {% set _ = pdfs.append(f) %}
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+
+    {% if pdfs %}
+      <div class="small" style="margin:10px 0;">
+        <strong>Slide deck (scrollable)</strong>
+      </div>
+
+      {% for p in pdfs %}
+        <div style="margin-bottom:16px;">
+          <div class="small" style="margin-bottom:8px;">
+            <a href="{{ url_for('serve_upload', filename=p.stored) }}" target="_blank">Open PDF in new tab</a>
+          </div>
+
+          <iframe
+            src="{{ url_for('serve_upload', filename=p.stored) }}"
+            style="width:100%; height:540px; border:1px solid rgba(20,20,20,.10); border-radius:14px; background:white;"
+            loading="lazy">
+          </iframe>
+        </div>
+      {% endfor %}
+    {% endif %}
+
+    {% if project.files %}
+      <div class="small" style="margin-top:10px;"><strong>All files</strong></div>
+      <ul class="small" style="margin-top:8px;">
+        {% for f in project.files %}
+          <li style="margin-bottom:10px;">
+            <a href="{{ url_for('serve_upload', filename=f.stored) }}" target="_blank">{{ f.original }}</a>
+            <div class="small">Uploaded {{ f.uploaded_at }}</div>
+          </li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      <div class="small">No files uploaded yet.</div>
+    {% endif %}
+  </div>
+
+</div>
+
+{% endblock %}

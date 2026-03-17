@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="sectionTitle">
+  <h2>About</h2>
+</div>
+<div class="rule"></div>
+
+<div class="grid">
+  
+  <!-- FOTO -->
+  <div style="aspect-ratio: 4 / 5; overflow:hidden; border-radius:18px; border:1px solid rgba(20,20,20,.10); box-shadow: 0 18px 45px rgba(20,20,20,.08);">
+    <img src="{{ url_for('static', filename='me.jpg') }}"
+         alt="Sydney Rebecca Sala"
+         style="width:100%; height:100%; object-fit:cover; display:block;">
+  </div>
+
+  <!-- BIO -->
+  <div class="card" style="grid-column: span 7;">
+    
+    <div class="kicker">Sydney Rebecca Sala</div>
+    <div class="h1" style="font-size:34px; margin-top:10px;">
+      Business Development & Innovation
+    </div>
+
+    <p class="small" style="font-size:15px; margin-top:14px;">
+      First-year Bachelor student at Albert School x Mines Paris, specializing in Business and Data AI. 
+      Currently deep-diving into advanced mathematics and serving as a Student Ambassador, 
+      I am driven by the intersection of data-driven strategy and technological innovation.
+    </p>
+
+    <div class="cta" style="margin-top:18px;">
+      <a class="btn primary" href="mailto:sydney.sala@icloud.com">Email</a>
+      <a class="btn" href="tel:+393478216285">Phone</a>
+      <a class="btn" href="https://linkedin.com/in/sydneyrebeccasala" target="_blank">LinkedIn</a>
+      <a class="btn" href="https://instagram.com/sydneysalaa" target="_blank">Instagram</a>
+    </div>
+
+  </div>
+</div>
+
+{% endblock %}

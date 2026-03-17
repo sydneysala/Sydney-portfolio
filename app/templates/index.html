@@ -1,0 +1,124 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="hero">
+  <div class="kicker">{{ profile.tagline }}</div>
+  <div class="h1">{{ profile.name }}</div>
+  <div class="sub">{{ profile.intro }}</div>
+  <div class="cta">
+    <a class="btn primary" href="{{ url_for('work') }}">View BDD Works</a>
+    <a class="btn" href="{{ url_for('contact') }}">Contact</a>
+  </div>
+</div>
+
+<div class="sectionTitle">
+  <h2>Selected BDD Works</h2>
+  <div class="small"><a href="{{ url_for('work') }}">All projects →</a></div>
+</div>
+<div class="rule"></div>
+
+<div class="grid">
+  {% for p in projects[:3] %}
+    <a class="card" style="grid-column: span 4;" href="{{ url_for('project_detail', slug=p.slug) }}">
+      <h3>{{ p.title }}</h3>
+      <div class="meta">{{ p.company }} • {{ p.period }}</div>
+      <p class="small">{{ p.summary }}</p>
+    </a>
+  {% endfor %}
+</div>
+
+<div class="sectionTitle">
+  <h2>School Journey</h2>
+</div>
+<div class="rule"></div>
+
+<div class="grid">
+  {% for s in school %}
+    <div class="card" style="grid-column: span 6;">
+      <div style="display:flex; gap:14px; align-items:flex-start;">
+        {% if s.logo %}
+          <img src="{{ url_for('static', filename=s.logo) }}"
+               alt="{{ s.school }} logo"
+               style="width:52px; height:52px; object-fit:contain; border-radius:12px; border:1px solid rgba(20,20,20,.10); background:rgba(255,255,255,.8); padding:8px;">
+        {% endif %}
+
+        <div style="flex:1;">
+          <div class="meta">{{ s.period }}</div>
+          <h3 style="margin:6px 0 4px 0;">{{ s.school }}</h3>
+          <div class="small"><strong>{{ s.program }}</strong></div>
+          <div class="small" style="opacity:.85;">{{ s.location }}</div>
+
+          {% if s.highlights %}
+            <ul class="small" style="margin-top:10px;">
+              {% for h in s.highlights %}
+                <li>{{ h }}</li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+</div>
+
+<div class="sectionTitle">
+  <h2>Interests</h2>
+</div>
+<div class="rule"></div>
+
+<div class="grid">
+  {% for it in interests %}
+    <div class="card" style="grid-column: span 4;">
+      <div style="display:flex; gap:12px; align-items:flex-start;">
+        <div style="font-size:24px; line-height:1; padding-top:2px;">{{ it.icon }}</div>
+        <div>
+          <h3 style="margin:0 0 6px 0;">{{ it.title }}</h3>
+          <div class="small" style="opacity:.9;">{{ it.details }}</div>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+</div>
+
+<div class="sectionTitle">
+  <h2>Skills</h2>
+</div>
+<div class="rule"></div>
+
+<div class="grid">
+  {% for s in skills %}
+    <div class="card" style="grid-column: span 6;">
+      <h3>{{ s.category }}</h3>
+
+      <div style="margin-top:10px; display:flex; flex-wrap:wrap; gap:8px;">
+        {% for item in s.list %}
+          <span style="font-size:12px; padding:6px 10px; border-radius:999px; border:1px solid rgba(20,20,20,.12); background:rgba(255,255,255,.7);">
+            {{ item }}
+          </span>
+        {% endfor %}
+      </div>
+    </div>
+  {% endfor %}
+</div>
+
+<div class="sectionTitle">
+  <h2>Community & Volunteering</h2>
+</div>
+<div class="rule"></div>
+
+<div class="grid">
+  {% for v in volunteering %}
+    <div class="card" style="grid-column: span 6;">
+      <div style="display:flex; gap:12px; align-items:flex-start;">
+        <div style="font-size:24px;">{{ v.icon }}</div>
+        <div>
+          <div class="meta">{{ v.period }}</div>
+          <h3 style="margin:6px 0 6px 0;">{{ v.title }}</h3>
+          <div class="small">{{ v.details }}</div>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+</div>
+
+{% endblock %}

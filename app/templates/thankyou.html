@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="hero" style="text-align:center;">
+  <div class="kicker">Message sent</div>
+  <div class="h1" style="font-size:38px;">Thank you.</div>
+  <div class="sub" style="margin: 16px auto; max-width:40ch;">
+    Your message has been received.  
+    I’ll get back to you within 24–48 hours.
+  </div>
+
+  <div class="cta" style="justify-content:center; margin-top:20px;">
+    <a class="btn primary" href="{{ url_for('home') }}">Back to Home</a>
+    <a class="btn" href="{{ url_for('work') }}">View BDD Works</a>
+  </div>
+</div>
+
+{% endblock %}

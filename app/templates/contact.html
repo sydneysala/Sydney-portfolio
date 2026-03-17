@@ -1,0 +1,97 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="sectionTitle">
+  <h2>Contact</h2>
+</div>
+<div class="rule"></div>
+
+<div class="grid">
+
+  <!-- LEFT: FORM -->
+  <div class="card" style="grid-column: span 6;">
+    <h3>Send a message</h3>
+    <p class="small" style="margin-top:6px;">
+      If you'd like to collaborate or discuss a project, feel free to reach out.
+    </p>
+
+    <form class="form"
+          action="https://formspree.io/f/mjgaroop"
+          method="POST"
+          style="margin-top:14px;">
+
+      <!-- Formspree hidden fields -->
+      <input type="hidden" name="_subject" value="New message from Sydney's portfolio">
+      <input type="hidden" name="_next" value="http://127.0.0.1:5000/thank-you">
+      <input type="hidden" name="_captcha" value="false">
+
+      <div class="row">
+        <div>
+          <label>Your name</label>
+          <input name="name" required>
+        </div>
+        <div>
+          <label>Email</label>
+          <input name="email" type="email" required>
+        </div>
+      </div>
+
+      <div style="margin-top:12px">
+        <label>Message</label>
+        <textarea name="message" required></textarea>
+      </div>
+
+      <div style="margin-top:12px">
+        <button class="btn primary" type="submit">Send</button>
+      </div>
+    </form>
+
+    <div class="small" style="margin-top:12px; opacity:.8;">
+      I typically reply within 24–48 hours.
+    </div>
+  </div>
+
+  <!-- RIGHT: DIRECT -->
+  <div class="card" style="grid-column: span 6;">
+    <h3>Direct</h3>
+    <p class="small">Prefer direct contact?</p>
+
+    <ul class="small" style="line-height:1.9; margin-top:10px;">
+      <li>
+        <strong>Email:</strong>
+        <a href="mailto:sydney.sala@icloud.com">
+          sydney.sala@icloud.com
+        </a>
+      </li>
+      <li>
+        <strong>Phone:</strong>
+        <a href="tel:+393478216285">
+          +39 347 821 6285
+        </a>
+      </li>
+      <li>
+        <strong>LinkedIn:</strong>
+        <a href="https://www.linkedin.com/in/sydney-rebecca-sala-a6b762382?utm_source=share_via&utm_content=profile&utm_medium=member_ios"
+           target="_blank">
+          Sydney Rebecca Sala
+        </a>
+      </li>
+      <li>
+        <strong>Location:</strong> Milan, Italy
+      </li>
+    </ul>
+
+    <div class="cta" style="margin-top:14px;">
+      <a class="btn primary" href="mailto:sydney.sala@icloud.com">Email me</a>
+      <a class="btn" href="tel:+393478216285">Call</a>
+      <a class="btn"
+         href="https://www.linkedin.com/in/sydney-rebecca-sala-a6b762382?utm_source=share_via&utm_content=profile&utm_medium=member_ios"
+         target="_blank">
+         LinkedIn
+      </a>
+    </div>
+  </div>
+
+</div>
+
+{% endblock %}

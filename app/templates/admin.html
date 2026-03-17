@@ -1,0 +1,121 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="sectionTitle">
+  <h2>Admin Panel</h2>
+  <div class="small"><a href="{{ url_for('admin_logout') }}">Logout →</a></div>
+</div>
+<div class="rule"></div>
+
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    {% for m in messages %}
+      <div class="flash">{{ m }}</div>
+    {% endfor %}
+  {% endif %}
+{% endwith %}
+
+<div class="grid">
+  <!-- CREATE PROJECT -->
+  <div class="card" style="grid-column: span 6;">
+    <h3>Create a new project</h3>
+
+    <form class="form" method="post">
+      <label>Slug (unique, e.g. “boston-market-expansion”)</label>
+      <input name="slug" placeholder="project-slug" />
+
+      <div style="margin-top:12px">
+        <label>Title</label>
+        <input name="title" placeholder="Project title" />
+      </div>
+
+      <div style="margin-top:12px">
+        <label>Company</label>
+        <input name="company" placeholder="Company name" />
+      </div>
+
+      <div style="margin-top:12px">
+        <label>Period</label>
+        <input name="period" placeholder="2025–2026" />
+      </div>
+
+      <div style="margin-top:12px">
+        <label>Summary</label>
+        <textarea name="summary" placeholder="What you did, impact, context..."></textarea>
+      </div>
+
+      <div style="margin-top:12px">
+        <label>Role</label>
+        <input name="role" placeholder="e.g. End-to-end builder / BD Intern / Analyst" />
+      </div>
+
+      <div style="margin-top:12px">
+        <label>Tags (one per line)</label>
+        <textarea name="tags" placeholder="Banking&#10;SME Screening&#10;Alternative Data"></textarea>
+      </div>
+
+      <div style="margin-top:12px">
+        <label>Tools (one per line)</label>
+        <textarea name="tools" placeholder="Python&#10;Streamlit&#10;Pandas"></textarea>
+      </div>
+
+      <div style="margin-top:12px">
+        <label>Deliverables (one per line)</label>
+        <textarea name="deliverables" placeholder="Live web app&#10;Slide deck&#10;Deployed prototype"></textarea>
+      </div>
+
+      <div style="margin-top:12px">
+        <label>Highlights (one per line)</label>
+        <textarea name="highlights" placeholder="Built a repeatable screening flow&#10;Deployed a live prototype&#10;Packaged insights in a deck"></textarea>
+      </div>
+
+      <div style="margin-top:12px">
+        <label>KPIs (one per line)</label>
+        <textarea name="kpis" placeholder="+25% qualified leads&#10;3 strategic partnerships signed"></textarea>
+      </div>
+
+      <div style="margin-top:12px">
+        <label>Links (one per line: Label | URL)</label>
+        <textarea name="links" placeholder="Website | https://...&#10;Deck | https://..."></textarea>
+      </div>
+
+      <div style="margin-top:12px">
+        <button class="btn primary" type="submit">Create</button>
+      </div>
+    </form>
+  </div>
+
+  <!-- UPLOAD FILES -->
+  <div class="card" style="grid-column: span 6;">
+    <h3>Upload files to an existing project</h3>
+    <div class="small">PPTX, PDF, images, DOCX, XLSX allowed.</div>
+
+    {% for p in projects %}
+      <div style="margin-top:14px; padding-top:14px; border-top:1px solid rgba(20,20,20,.10);">
+        <div style="display:flex; justify-content:space-between; gap:10px; align-items:baseline;">
+          <div>
+            <strong>{{ p.title }}</strong>
+            <div class="meta">{{ p.slug }}</div>
+          </div>
+          <a class="btn" href="{{ url_for('project_detail', slug=p.slug) }}">View</a>
+        </div>
+
+        <form method="post" action="{{ url_for('upload_file', slug=p.slug) }}" enctype="multipart/form-data" style="margin-top:10px;">
+          <input type="file" name="file" />
+          <button class="btn primary" type="submit">Upload</button>
+        </form>
+
+        {% if p.files %}
+          <div class="small" style="margin-top:8px;">Latest uploads:</div>
+          <ul class="small">
+            {% for f in p.files[:3] %}
+              <li><a href="{{ url_for('serve_upload', filename=f.stored) }}" target="_blank">{{ f.original }}</a></li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% endblock %}
