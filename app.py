@@ -43,8 +43,8 @@ def load_user(user_id):
 # -------------------- Content --------------------
 PROFILE = {
     "name": "Sydney Rebecca Sala",
-    "tagline": "Business Development • Innovation • Strategy",
-    "intro": "I build partnerships, structure growth, and turn ideas into measurable results.",
+    "tagline": "BUSINESS • STRATEGY • INNOVATION",
+    "intro": "I turn ideas into structured strategies and real-world solutions.",
     # (optional) you can use this in about.html if you want:
     "email": "your@email.com",
     "phone": "+39XXXXXXXXXX",
